@@ -777,6 +777,13 @@ void CameraParameters::getSupportedPreviewSizes(Vector<Size> &sizes) const
 }
 
 #ifdef QCOM_HARDWARE
+#ifdef QCOM_LEGACY_CAM_PARAMS
+void CameraParameters::setPostviewSize(int width, int height)
+{
+    // dummy
+}
+#endif
+
 void CameraParameters::getSupportedHfrSizes(Vector<Size> &sizes) const
 {
     const char *hfrSizesStr = get(KEY_SUPPORTED_HFR_SIZES);
